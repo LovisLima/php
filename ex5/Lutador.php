@@ -1,132 +1,121 @@
 <?php
 
-class Lutador
-{
+class Lutador{
     private $nome;
     private $nacionalidade;
-    private $idade;
-    private $altura;
-    private $peso;
-    private $categoria;
-    private $vitorias;
-    private $derrotas;
-    private $empates;
+    private $idade, $altura, $peso;
+    private $categoria, $vitorias, $derrotas, $empates;
 
-    public function __construct(){
+
+    public function __construct($no, $na, $id, $al, $pe, $vi, $de, $em)
+    {
+        $this->nome = $no;
+        $this->nacionalidade = $na;
+        $this->idade = $id;
+        $this->altura = $al;
+        $this->peso = $pe;
+        $this->vitorias = $vi;
+        $this->derrotas = $de;
+        $this->empates = $em;
 
     }
 
 
-    /**
- * @return mixed
- */
-public function getNome()
-{
+    function apresentar (){
+        echo "<p>------------------------</p>";
+        echo "<p>Chegou a Hora! O lutador" + $this ->getNome();
+        echo "veio diretamente de " + $this->getNacionalidade();
+        echo "tem" + $this ->getIdade() + "anos e pesa" + $this ->getPeso()+"Kg";
+        echo "<br>Ele tem" + $this->getVitorias() + "vitórias";
+        echo $this->getDerrotas() +  "derrotas e" + $this ->getEmpates() + "empates";
+    }
+
+    function status(){
+        echo "<p>------------------------</p>";
+        echo "<p>" +this->getNome() + "é um peso" + $this->getCategoria();
+        echo "e já ganhou" + this->getVitorias() + "vitórias";
+
+    }
+    function ganharLuta(){
+        $this->setVitorias($this->getVitorias() +1);
+        $this->vitorias =$this->vitorias +1;
+    }
+    function perderLuta(){
+        $this->setDerrotas($this->getDerrotas() +1);
+
+    }
+    function empatarLuta(){
+        $this->setEmpates($this->getEmpates() +1);
+    }
+
+
+public function getNome(){
     return $this->nome;
-}/**
- * @param mixed $nome
- */
-public function setNome($nome)
-{
+}
+public function setNome($nome){
     $this->nome = $nome;
-}/**
- * @return mixed
- */
-public function getNacionalidade()
-{
+}
+public function getNacionalidade(){
     return $this->nacionalidade;
-}/**
- * @param mixed $nacionalidade
- */
-public function setNacionalidade($nacionalidade)
-{
+}
+public function setNacionalidade($nacionalidade){
     $this->nacionalidade = $nacionalidade;
-}/**
- * @return mixed
- */
-public function getIdade()
-{
+}
+public function getIdade(){
     return $this->idade;
-}/**
- * @param mixed $idade
- */
-public function setIdade($idade)
-{
+}
+public function setIdade($idade){
     $this->idade = $idade;
-}/**
- * @return mixed
- */
-public function getAltura()
-{
+}
+public function getAltura(){
     return $this->altura;
-}/**
- * @param mixed $altura
- */
-public function setAltura($altura)
-{
+}
+public function setAltura($altura){
     $this->altura = $altura;
-}/**
- * @return mixed
- */
-public function getPeso()
-{
+}
+public function getPeso(){
     return $this->peso;
-}/**
- * @param mixed $peso
- */
-public function setPeso($peso)
-{
+}
+public function setPeso($peso){
     $this->peso = $peso;
-}/**
- * @return mixed
- */
-public function getCategoria()
-{
+    $this->setCategoria();
+}
+public function getCategoria(){
     return $this->categoria;
-}/**
- * @param mixed $categoria
- */
-public function setCategoria($categoria)
-{
-    $this->categoria = $categoria;
-}/**
- * @return mixed
- */
-public function getVitorias()
-{
+}
+public function setCategoria(){
+    if ($this->peso<52.2) {
+        $this->categoria = "Inválido";
+    }elseif ($this ->peso <= 70.3) {
+        $this->categoria = "Leve";
+    }elseif($this->peso<=83.9) {
+        $this->categoria = "Médio";
+    }elseif ($this->peso <= 120.2) {
+        $this->categoria = "Pesado";
+    }else{
+          $this->categoria = "Inválido";
+    }
+
+    }
+
+public function getVitorias(){
     return $this->vitorias;
-}/**
- * @param mixed $vitorias
- */
-public function setVitorias($vitorias)
-{
+}
+public function setVitorias($vitorias){
     $this->vitorias = $vitorias;
-}/**
- * @return mixed
- */
-public function getDerrotas()
-{
+}
+public function getDerrotas(){
     return $this->derrotas;
-}/**
- * @param mixed $derrotas
- */
-public function setDerrotas($derrotas)
-{
+}
+public function setDerrotas($derrotas){
     $this->derrotas = $derrotas;
-}/**
- * @return mixed
- */
-public function getEmpates()
-{
+}
+public function getEmpates(){
     return $this->empates;
-}/**
- * @param mixed $empates
- */
-public function setEmpates($empates)
-{
+}
+public function setEmpates($empates){
     $this->empates = $empates;
 }
-
 
 
 }
