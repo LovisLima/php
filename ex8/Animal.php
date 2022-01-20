@@ -5,7 +5,7 @@ abstract class Animal{
     protected $Idade;
     protected $membros;
 
-    abstract function emitirSom();
+    public abstract function emitirSom();
 
 
     public function getPeso(){
