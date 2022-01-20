@@ -1,9 +1,9 @@
 <?php
 
-class Pessoa{
-    private $nome;
-    private $idade;
-    private $sexo;
+ abstract class Pessoa{
+    protected $nome;
+    protected $idade;
+    protected $sexo;
 
     public function fazerAniversario(){
         $this->idade ++;
