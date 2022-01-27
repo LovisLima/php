@@ -30,13 +30,9 @@
 
                 <?php
                     include 'conexao.php';
-                    $sql = "SELECT * FROM estoque";
-                $servername ="localhost";// padrao -server local
-                $database ="formulario_estoque"; //alterar conforme o nome do seu banco de dados
-                $username = "root";// padrao - root
-                $password = "";//senha de conexão do banco de dados.
-                $conexao = mysqli_connect($servername, $username, $password, $database);
-                $busca = mysqli_query($conexao,$sql);
+                    $sql = "SELECT * FROM `estoque`";
+                
+                    $busca = mysqli_query($conexao,$sql);
 
                 while ($array = mysqli_fetch_array($busca)){
                     $id_estoque = $array['id_estoque'];
@@ -53,7 +49,13 @@
                 <td><?php echo $quantidade ?> </td>
                 <td><?php echo $fornecedor ?> </td>
                 <td><a class="btn btn-warning btn-sm" href="editarProduto.php?id=<?php echo
-                $id_estoque ?>"role="button"><i class="far fa-edit"></i>&nbsp;&nbsp;Editar</a></td>
+                $id_estoque ?>"role="button"><i class="far fa-edit"></i>&nbsp;&nbsp;Editar</a>
+
+
+                <a class="btn btn-danger btn-sm" href="deletarProduto.php?id=<?php echo
+                $id_estoque ?>"role="button"><i class="far fa-trash-alt"></i>&nbsp;&nbsp;Excluir</a></td>
+                </td>
+
             </tr>
                 <?php } ?>
 

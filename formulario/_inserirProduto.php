@@ -1,6 +1,6 @@
     <?php
 
-
+    include_once 'conexao.php';
 
 
     $nroproduto = $_POST['nroproduto']; // Recebe o valor do atributo
@@ -10,19 +10,10 @@
     $fornecedor = $_POST['fornecedor'];
 
 
-     $sql = "INSERT INTO `estoque`( `nroproduto`, `nomeprodroduto`, `categoria`, `quantidade`, `fornecedor`)
-            VALUES ($nroproduto,'$nomeproduto','$categoria',$quantidade,'$fornecedor')";
-
-    //script de conexao
-
-    $servername ="localhost";// padrao -server local
-    $database ="formulario_estoque"; //alterar conforme o nome do seu banco de dados
-    $username = "root";// padrao - root
-    $password = "";//senha de conexão do banco de dados.
-    //create connection
-    $conexao = mysqli_connect($servername, $username, $password, $database);
-
+      $sql = "INSERT INTO `estoque`( `nroproduto`, `nomeproduto`, `categoria`, `quantidade`, `fornecedor`) VALUES ('$nroproduto','$nomeproduto','$categoria',$quantidade,'$fornecedor')";
      $inserir = mysqli_query($conexao, $sql);
+    
+
     ?>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
               integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
