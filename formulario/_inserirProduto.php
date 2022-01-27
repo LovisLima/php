@@ -22,7 +22,7 @@
             <div class="col-md-12 text-center">
         <h4> Produto adicionado com sucesso!</h4>
         <div style="padding-top: 20px">
-            <a href="index.php" role="button" class ="btn btn-sm btn-primary">Cadastrar novo Item</a>
+            <a href="adicionarProduto.php" role="button" class ="btn btn-sm btn-primary">Cadastrar novo Item</a>
             <div class="col-md-12 text-center">
         </div>
         </div>

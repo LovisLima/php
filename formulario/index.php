@@ -12,17 +12,17 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Adicionar Produto</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <p class="card-text">Opção para adicionar produtos no estoque.</p>
+        <a href="adicionarProduto.php" class="btn btn-primary">Cadastrar Produto</a>
       </div>
     </div>
   </div>
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">Lista de Produtos</h5>
+        <p class="card-text">Visualizar, editar e excluir produtos</p>
+        <a href="listarProdutos.php" class="btn btn-primary">Produto</a>
       </div>
     </div>
   </div>
